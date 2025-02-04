@@ -73,12 +73,6 @@ The project is organized as follows:
 
 ---
 
-## 💬 How to Contribute
-
-We welcome contributions! Feel free to fork this repo, make improvements, and submit pull requests. 🛠️
-
----
-
 ## 🦸‍♂️ Built with:
 
 - **React.js** - A JavaScript library for building user interfaces
