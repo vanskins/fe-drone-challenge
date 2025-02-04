@@ -23,7 +23,7 @@ Welcome to the **Drone App** frontend! 🚀 This app is built with **React JS**,
 2. **Clone this frontend repository**:
 
    ```bash
-   git clone https://github.com/your-username/frontend-repo-name
+   git clone https://github.com/vanskins/fe-drone-challenge
    ```
 
 3. **Install dependencies for the frontend**:
