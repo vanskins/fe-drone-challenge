@@ -64,8 +64,8 @@ The project is organized as follows:
 /fe-drone-challenge
   ├──app
       ├── /components       # Reusable UI components
-    ├── /lib              # API logic & Axios config
-    ├── /types            # TypeScript data types
+    ├── /lib                # API logic & Axios config
+    ├── /types              # TypeScript data types
 ```
 
 - **`/components`**: This folder holds all the UI components for the frontend, from buttons to forms and cards.
