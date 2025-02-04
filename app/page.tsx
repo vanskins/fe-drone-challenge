@@ -1,15 +1,25 @@
 "use client"
 import React, { useState } from "react"
 import { Card } from "./components/Card"
+import { postInstructions } from "../lib/api"
+import { billboardTypes, postInstructionsTypes } from "../types/billboardTypes"
+
 
 export default function Home() {
-  const [drones, setDrones] = useState([])
-  const [instructions, setInstructions] = useState<string>()
-  const [error, setError] = useState<string>()
+  const [billboardData, setBillboardData] = useState<billboardTypes[]>()
+  const [instructions, setInstructions] = useState<string | null>()
+  const [error, setError] = useState<string | null>()
 
-  const postInstructions = () => {
+  const onSubmit = () => {
     if (instructions) {
-      console.log(instructions, "Instructions")
+      postInstructions(instructions).then((result: postInstructionsTypes) => {
+        const { billboards, success } = result
+        if (success) {
+          setBillboardData(billboards)
+        }
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
 
@@ -26,12 +36,12 @@ export default function Home() {
 
   }
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="container-fluid">
       <h1 className="text-4xl font-extrabold">DRONE APP</h1>
       <div>
         <form onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault()
-          postInstructions()
+          onSubmit()
         }}>
           <input
             onChange={handleOnChange}
@@ -40,7 +50,7 @@ export default function Home() {
           />
           <button
             className={`p-2 text-white font-semibold ${!!error || !instructions ? "bg-slate-300" : "bg-slate-800"}`}
-            onClick={() => postInstructions()}
+            onClick={() => onSubmit()}
             disabled={!!error || !instructions}
           >
             submit
@@ -48,7 +58,12 @@ export default function Home() {
         </form>
         {error && <p className="text-red-600 font-semibold">{error}</p>}
       </div>
-      <Card />
+      <div className="flex flex-col gap-4">
+        {
+          billboardData && billboardData.map((item: billboardTypes, key: number) => <Card item={item} key={key} />)
+        }
+      </div>
+
     </div>
   );
 }
