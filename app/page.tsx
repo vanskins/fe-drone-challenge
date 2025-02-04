@@ -36,9 +36,10 @@ export default function Home() {
 
   }
   return (
-    <div className="container-fluid">
+    <div className="container-fluid min-h-screen flex flex-col items-center bg-green-400">
       <h1 className="text-4xl font-extrabold">DRONE APP</h1>
-      <div>
+      <p>sample x^xv</p>
+      <div className="m-4">
         <form onSubmit={(event: React.FormEvent<HTMLFormElement>) => {
           event.preventDefault()
           onSubmit()
@@ -58,12 +59,11 @@ export default function Home() {
         </form>
         {error && <p className="text-red-600 font-semibold">{error}</p>}
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 p-4">
         {
           billboardData && billboardData.map((item: billboardTypes, key: number) => <Card item={item} key={key} />)
         }
       </div>
-
     </div>
   );
 }
