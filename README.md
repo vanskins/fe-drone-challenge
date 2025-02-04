@@ -89,9 +89,10 @@ We welcome contributions! Feel free to fork this repo, make improvements, and su
 
 ---
 
-## 🙏 Special Thanks
+## 🙏 Recommendations for improvements
 
-- Bigdatr for the frontend code challenge!
+- Improve backend for realtime updates when giving instructions so that on the Front end we can have a realtime update or monitoring when instructions are given to the drone. Use websockets to give instant realtime updates from BE to FE.
+- Error and Notifications - Ensure to provide feedbacks right away to users if there are error or any relevant information from the APP.
 
 ---
 
