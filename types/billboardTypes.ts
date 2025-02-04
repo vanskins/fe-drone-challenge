@@ -14,3 +14,8 @@ export type postInstructionsTypes = {
   instructions: string;
   success: boolean;
 };
+
+export type billboardResponseTypes = {
+  success: boolean;
+  billboard: billboardTypes;
+};
