@@ -12,11 +12,11 @@ const axiosInstance = axios.create({
 // Request Interceptor (Optional: Add Authorization headers here)
 axiosInstance.interceptors.request.use(
   (config) => {
-    console.log(`📡 Sending request to ${config.url}`);
+    console.log(`Sending request to ${config.url}`);
     return config;
   },
   (error) => {
-    console.error("❌ Request Error:", error);
+    console.error("Request Error:", error);
     return Promise.reject(error);
   }
 );
@@ -27,13 +27,13 @@ axiosInstance.interceptors.response.use(
   (error) => {
     if (error.response) {
       console.error(
-        `🚨 API Error [${error.response.status}]:`,
+        `API Error [${error.response.status}]:`,
         error.response.data
       );
     } else if (error.request) {
-      console.error("⏳ No response received from API");
+      console.error("No response received from API");
     } else {
-      console.error("⚠️ Request setup error:", error.message);
+      console.error("Request setup error:", error.message);
     }
     return Promise.reject(error);
   }
