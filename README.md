@@ -61,10 +61,11 @@ Welcome to the **Drone App** frontend! 🚀 This app is built with **React JS**,
 The project is organized as follows:
 
 ```
-/src
-  ├── /components       # Reusable UI components
-  ├── /lib              # API logic & Axios config
-  ├── /types            # TypeScript data types
+/fe-drone-challenge
+  ├──app
+      ├── /components       # Reusable UI components
+    ├── /lib              # API logic & Axios config
+    ├── /types            # TypeScript data types
 ```
 
 - **`/components`**: This folder holds all the UI components for the frontend, from buttons to forms and cards.
