@@ -7,7 +7,7 @@ interface CardI {
 }
 
 export const Card = ({ item }: CardI) => {
-  console.log(item)
+
   return (
     <div className="flex flex-col bg-white w-full max-w-md rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
       <div className="w-full rounded-t-lg overflow-hidden">
