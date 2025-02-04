@@ -95,5 +95,3 @@ We welcome contributions! Feel free to fork this repo, make improvements, and su
 - Error and Notifications - Ensure to provide feedbacks right away to users if there are error or any relevant information from the APP.
 
 ---
-
-Happy coding! 🖥️🚀
